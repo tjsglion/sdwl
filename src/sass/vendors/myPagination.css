@@ -1,0 +1,116 @@
+.pagination ul {
+    list-style: none;
+    padding-left: 0;
+}
+.pagination ul li {
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #ffffff;
+    color: #04a450;
+    border: 1px solid #dfe3e6;
+}
+
+.pagination ul li:first-of-type{
+    margin-left: 0;
+}
+.pagination ul li:hover {
+    transform: scale(1.1);
+    background-color: #04a450;
+    color: #fff;
+}
+.pagination ul li.totalPage{
+    color: #333;
+}
+.pagination  li.active {
+    background: #04a450;
+    color: white;
+    cursor: not-allowed;
+}
+
+.pagination li.disabled {
+    cursor: not-allowed;
+    background-color: #f0f4f7;
+    color: #b2b2b2;
+}
+.pagination li.totalPage {
+    background: transparent;
+    cursor: default;
+    border: none;
+    padding: 0 6px;
+}
+.pagination li.totalPage:hover {
+    transform: none;
+    background-color: #ffffff;
+}
+
+.pagination li input {
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dfe3e6;
+    box-sizing: border-box;
+    color: #333;
+    display: inline-block;
+    font-size: inherit;
+    outline: none;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+}
+
+.pagination li input:focus{
+    border-color: #98A6AD;
+}
+.pagination{
+    user-select: none;
+}
+
+.pagination ul:nth-child(2){
+    border-radius: 6px;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media all and (min-width: 1190px){
+    .pagination ul li {
+        padding: 0 15px;
+        font-size: 12px;
+        min-width: 40px;
+        min-height: 40px;
+        line-height: 38px;
+        margin: 0 5px;
+    }
+    .pagination li input {
+        padding: 3px 5px;
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        margin: 0 6px;
+    }
+}
+@media all and (min-width: 750px) and (max-width: 1190px){
+
+    .pagination ul li {
+        padding: 0 5px;
+        font-size: 12px;
+        min-width: 30px;
+        min-height: 30px;
+        line-height: 28px;
+        margin: 0 5px;
+    }
+    .pagination li input {
+        padding: 3px 5px;
+        width: 40px;
+        height: 30px;
+        line-height: 28px;
+        margin: 0 6px;
+    }
+}

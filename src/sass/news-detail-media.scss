@@ -1,0 +1,213 @@
+@media all and (min-width: $max-width-1190) {
+  .news-detail,
+  .news-recommand{
+    width: 808px;
+  }
+  .news-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    .detail-right{
+      flex: 1;
+    }
+  }
+  .detail-right{
+    .detail-title,
+    .detail-ctx{
+      // max-width: 680px;
+      width: 700px;
+      padding-right: 20px;
+    }
+  }
+  .news-recommand-left{
+    .new-recommand-info{
+      display: flex;
+      flex-direction: row;
+      .news-like{
+        width: 280px;
+        .detail-title{
+          margin-top: 5px;
+          @include overflowHidden;
+          line-height: 1;
+          font-size: $font-size-20;
+          color: $search-result-font-color;
+        }
+        .sub-title{
+          margin-top: 15px;
+          line-height: 1;
+          font-size: $font-size-12;
+          color: $contact-pub-time-color;
+          .ml{
+            margin-left: 10px;
+          }
+        }
+        .detail-ctx{
+          max-height: 140px;
+          min-height: 80px;
+          margin-top: 15px;
+          overflow: auto;
+          line-height: .3;
+        }
+      }
+    }
+    .news-eyes{
+      width: 385px;
+    }
+  }
+}
+
+@media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+  .news-detail,
+  .news-recommand{
+    width: 702px;
+  }
+  .news-detail{
+    position: relative;
+    padding-top: 20px;
+    .news-date{
+      position: absolute;
+      left: 0;
+      top: 20px;
+    }
+    .detail-right{
+      .detail-title-wrap{
+        position: relative;
+        left: 105px;
+      }
+    }
+  }
+
+  .detail-right{
+    .detail-title{
+      max-width: 575px;
+    }
+    .detail-ctx{
+      // max-width: 680px;
+      width: 700px;
+      // margin-top: 40px;
+      padding-right: 20px;
+    }
+  }
+
+  .news-recommand-left{
+    position: relative;
+    .new-recommand-info{
+      .news-date{
+        position: absolute;
+        top: 20px;
+        left: 0;
+      }
+      .news-like{
+        width: 350px;
+        .detail-title{
+          margin-top: 5px;
+          @include overflowHidden;
+          line-height: 1;
+          font-size: $font-size-20;
+          color: $search-result-font-color;
+        }
+        .sub-title{
+          margin-top: 15px;
+          line-height: 1;
+          font-size: $font-size-12;
+          color: $contact-pub-time-color;
+          .ml{
+            margin-left: 10px;
+          }
+        }
+        .detail-title,
+        .sub-title{
+          width: 235px;
+          margin-left: 105px;
+        }
+        .detail-ctx{
+          width: 335px;
+          max-height: 140px;
+          min-height: 80px;
+          margin-top: 50px;
+          overflow: auto;
+          line-height: .5;
+        }
+      }
+    }
+    .news-eyes{
+      width: 330px;
+    }
+  }
+
+  .news-recommand-list{
+    .news-recommand-item-desc{
+      margin-left: 20px;
+      max-width: 208px !important;
+      @include overflowHidden;
+    }
+  }
+  .news-recommand-title{
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: $min-width-750) {
+  .main-wrap{
+    padding: 0 px2rem(30);
+    overflow: hidden;
+    .mobile-hide{
+      display: none;
+    }
+    .mobile-show{
+      display: block!important;
+    }
+    .news-detail{
+      border: none;
+    }
+    .detail-title{
+      font-size: px2rem(36);
+      white-space: normal;
+      line-height: 1.2;
+      margin-top: px2rem(10);
+    }
+
+    .breadcrumb-bottom{
+      height: px2rem(96);
+      line-height: px2rem(96);
+      // background: gold;
+      .main-wrap{
+        height: 100%;
+        padding: 0;
+      }
+      .crumb-link,
+      .crumb-text{
+        height: 100%;
+        // margin-right: px2rem(25);
+        font-size: px2rem(28) !important;
+      }
+    }
+
+    .detail-title-wrap{
+      height: auto;
+      .detail-title{
+        font-size: px2rem(36) !important;
+        line-height: 1.5;
+      }
+      .sub-title{
+        position: relative;
+        font-size: px2rem(24);
+        bottom: 0;
+        margin-top: px2rem(5);
+        line-height: 2;
+      }
+    }
+    .detail-ctx{
+      // width: px2rem(690);
+      // width: 100%;
+      background: #f0f4f7;
+      font-size: px2rem(24);
+      line-height: 1.8;
+      padding: 0 px2rem(30) px2rem(50);
+      margin-left: px2rem(-30);
+      margin-right: px2rem(-30);
+    }
+  }
+}

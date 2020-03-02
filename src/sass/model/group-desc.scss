@@ -1,0 +1,204 @@
+.group-first,
+.group-third{
+  background-color: $business-detail-bg-color;
+}
+.group-second,
+.group-four{
+  background-color: $bg-default;
+}
+.main-wrap{
+  height: 100%;
+}
+
+.first-block::before,
+.second-block::before,
+.third-block::before{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+}
+.first-block::before{
+  background: url(../img/g-bg-img-1.png) no-repeat;
+  width: 628px;
+  height: 135px;
+}
+.second-block::before{
+  left: -40px;
+  background: url(../img/g-bg-img-2.png) no-repeat;
+  width: 435px;
+  height: 153px;
+}
+.third-block::before{
+  left: 30px;
+  background: url(../img/g-bg-img-3.png) no-repeat;
+  width: 283px;
+  height: 218px;
+}
+.block-title{
+  padding-top: 24px;
+  .span-h2{
+    display: block;
+    font-size: $font-size-24;
+    color: $index-title-color;
+    line-height: 35px;
+    border-left: 4px solid $nav-bg-color;
+    box-sizing: border-box;
+    font-weight: 500;
+  }
+}
+.content-wrap{
+  padding-top: 43px;
+  font-size: 0;
+  position: relative;
+  .content-left,
+  .content-right{
+    @include displayInlineBlock;
+    position: relative;
+    .content{
+      display: block;
+      font-size: 13px;
+      color: $search-result-font-color;
+      line-height: 24px;
+      text-indent: 30px;
+      letter-spacing: .5px;
+    }
+    .left-img,
+    .right-img{
+      position: absolute;
+      width: 65px;
+      height: 61px;
+    }
+    .left-img{
+      left: -80px;
+      top: -62px;
+      background: url(../img/g-img-2.png) center no-repeat;
+    }
+    .right-img{
+      right: -50px;
+      bottom: -50px;
+      background: url(../img/g-img-3.png) center no-repeat;
+    }
+  }
+  .since-img{
+    position: absolute;
+    left: -5px;
+    top: -30px;
+    background: url(../img/g-img-1.png) no-repeat;
+    width: 354px;
+    height: 63px;
+  }
+
+  .left-item{
+    margin-bottom: 25px;
+    .item-title{
+      font-size: $font-size-18;
+      line-height: 1;
+      color: $nav-bg-color;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .item-desc{
+      font-size: $font-size;
+      line-height: 24px;
+      color: $search-result-font-color;
+    }
+  }
+  .right-item{
+    margin-bottom: 20px;
+    .item-title,
+    .item-desc{
+      font-size: $font-size;
+      line-height: 1;
+    }
+    .item-title{
+      color: $nav-bg-color;
+      margin-right: 14px;
+    }
+    .item-desc{
+      color: $search-result-font-color;
+    }
+  }
+}
+
+.content-second{
+  padding-top: 15px;
+}
+
+.organize-wrap{
+  position: relative;
+  .first-level,
+  .second-level,
+  .third-level{
+    position: absolute;
+    z-index: 1;
+    .level-item{
+      font-size: $font-size;
+      color: $search-result-font-color;
+      line-height: 22px;
+    }
+  }
+}
+
+.qualification-wrap{
+  font-size: 0;
+  padding-top: 36px;
+  .qua-item{
+    @include displayInlineBlock;
+    text-align: center;
+    width: 20%;
+    .qua-img{
+      position: relative;
+      width: 120px;
+      height: 120px;
+      left: 50%;
+      margin-left: -60px;
+      .icon-common{
+        position: relative;
+        font-size: 120px;
+        color: #d1d1d1;
+      }
+      .icon{
+        position: relative;
+        font-size: 40px;
+        top: -82px;
+        color: #808080;
+      }
+    }
+    .qua-img-5::before,
+    .qua-img-6::before{
+      width: 123px;
+      height: 123px;
+    }
+    .qua-img-5::before{
+      background: url(../img/g-img-5.png) no-repeat;
+    }
+    .qua-img-6::before{
+      background: url(../img/g-img-6.png) no-repeat;
+    }
+    .qua-img-7::before{
+      background: url(../img/g-img-7.png) no-repeat;
+    }
+    .qua-img-8::before{
+      background: url(../img/g-img-8.png) no-repeat;
+    }
+    .qua-img-9::before{
+      background: url(../img/g-img-9.png) no-repeat;
+    }
+    .qua-title{
+      font-size: $font-size;
+      color: $nav-color-a;
+      line-height: 1;
+      font-weight: 500;
+      margin-top: 30px;
+    }
+    .qua-desc{
+      margin-top: 26px;
+      .qua-info{
+        font-size: $font-size-12;
+        color: $contact-pub-time-color;
+        line-height: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import "common/font/font.css";
+@import "base/_normalize";
+@import 'custom/default';
+@import "common/common";
+@import "common/header";
+@import "common/footer";
+@import "common/banner";
+@import "common/breadcrumb";
+@import "common/btngroup";
+
+
+.dj-detail-wrap{
+  width: 100%;
+  background-color: #fffaef;
+  margin-bottom:50px;
+  border-bottom: 1px solid $border-default-color;
+  .new-recommand-info{
+    padding-top: 20px;
+    border-right: 1px solid $border-default-color;
+  }
+
+  .news-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90px;
+    height: 90px;
+    background-color: $business-detail-bg-color;
+    text-align: center;
+    margin-right: 15px;
+    font-family: 'd_a_b';
+    .day,
+    .month,
+    .year{
+      line-height: 1;
+    }
+    .day{
+      color: $nav-bg-color;
+      font-size: 500;
+      font-size: $font-size-36;
+      margin-top: 10px;
+    }
+    .month,
+    .year{
+      color: $breadcrumb-font-color;
+      margin-top: 4px;
+    }
+    .month{
+      font-size: $font-size-18;
+    }
+    .year{
+      font-size: $font-size-12;
+    }
+  }
+  .dj-flex{
+    .day{
+      color: $banner-bg-color-dj;
+    }
+  }
+  .news-like{
+    .detail-title{
+      font-size: $font-size-18;
+      color: $nav-color-a;
+      line-height: 1;
+    }
+  }
+  .detail-ctx{
+    position: relative;
+    overflow: auto !important;
+    height: 690px;
+    margin-top: 25px;
+    font-size: 14px;
+    color: $nav-color-a;
+    line-height: 1.8;
+    background-color: #fffaef;
+    > img{
+      width: 100%;
+      height: 376px;
+    }
+  }
+  .dj-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .flex-item-ctx{
+    flex: 1;
+
+  }
+  .flex-item-more{
+    width: 370px;
+    margin-left: 28px;
+
+    .item-tab{
+      margin-top: 32px;
+      line-height: 50px;
+      height: 50px;
+      box-sizing: border-box;
+      position: relative;
+      &::before{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        content: '';
+        border-bottom: 1px solid $border-default-color;
+      }
+
+      .item-tab-common,
+      .more{
+        font-size: $font-size;
+      }
+      .item-tab-common{
+        display: inline-block;
+        vertical-align: top;
+        line-height: 49px;
+        box-sizing: border-box;
+        border-bottom: 1px solid $dj-font-color;
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+        color: $dj-font-color;
+      }
+      .more{
+        float: right;
+        color: $breadcrumb-font-color;
+      }
+    }
+    .item-tab-ctx{
+      margin-top: 16px;
+      .tab-ctx-desc{
+        line-height: 34px;
+        font-size: $font-size;
+        cursor: pointer;
+        .desc-info{
+          display: inline-block;
+          @include overflowHidden;
+          color: $breadcrumb-font-color;
+        }
+        .desc-time{
+          float: right;
+          color: $contact-pub-time-color;
+        }
+      }
+    }
+  }
+}
+
+.mobile-show{
+  display: none;
+}
+
+@import './dangjian-detail-media.scss';

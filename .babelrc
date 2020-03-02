@@ -1,0 +1,18 @@
+{
+  "presets": [ "es2015",
+      ["env",
+      {
+          "targets":
+          {
+              "browsers": ["android>=4.0", "ios>=7.0", "ie>=8", "> 1% in CN"]
+          },
+          "useBuiltIns": "usage",
+          "modules": false,
+          "loose": true
+      }]
+  ],
+  "plugins": [ "transform-async-to-generator", ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true}]]
+}

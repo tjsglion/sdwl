@@ -1,0 +1,134 @@
+@charset "UTF-8";
+@import "base/_normalize";
+@import 'custom/default';
+@import "common/common";
+@import "common/header";
+@import "common/footer";
+@import "common/banner";
+@import "common/breadcrumb";
+@import "common/btngroup";
+@import "common/font/font.css";
+
+.group-btn-group{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/** 集团介绍 */
+@import './model/group-desc.scss';
+/** 大事件 */
+// @import './model//big-event.scss';
+
+.mobile-show{
+  display: none;
+}
+.big-event-wrap{
+  .big-event-main{
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .event-slides,
+    .evnet-slide .flex-viewport,
+    .evnet-slide .flex-viewport .event-slides{
+      height: 100%;
+    }
+    .big-event-title{
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 319px;
+      height: 96px;
+      img{
+        display: block;
+        width: 100%;
+      }
+      // margin-top: 20px;
+    }
+    .event-flexslider{
+      // margin-bottom: 40px;
+      position: relative;
+      flex: 1;
+      // background: gold;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .event-item{
+        height: 530px;
+         display: inline-block;
+         .item-info{
+           display: flex;
+           flex-direction: column;
+           justify-content: flex-end;
+           height: 100%;
+         }
+      }
+      .event-title{
+        box-sizing: border-box;
+        // border-bottom: 1px solid $big-event-border-color;
+        position: relative;
+        height: 68px;
+        line-height: 64px;
+        &::before{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          content: '';
+          border-bottom: 1px solid $big-event-border-color;
+        }
+        .span-title{
+          display: block;
+          line-height: 64px;
+          height: 68px;
+          font-size: 58px;
+          color: $big-event-year-color;
+          // border-bottom:2px solid $nav-bg-color;
+          font-family: 'd_a_b';
+          position: relative;
+          &::before{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 110px;
+            content: '';
+            border-bottom: 2px solid $nav-bg-color;
+          }
+        }
+      }
+      .month-event-item{
+        .span-item{
+          display: block;
+          // margin-top: 16px;
+          margin-top: 10px;
+          font-size: 12px;
+          line-height: 18px;
+          color: $nav-color-a;
+        }
+      }
+      .flex-direction-nav > li{
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+        .icon{
+          font-size: 40px;
+          color: #bbc9cb;
+          transition: all .3s;
+          &:hover{
+            color: $nav-bg-color;
+          }
+        }
+      }
+      .flex-nav-prev{
+        left: -60px;
+      }
+      .flex-nav-next{
+        right: -60px;
+      }
+    }
+  }
+}
+
+@import "./group-media.scss";

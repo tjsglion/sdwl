@@ -1,0 +1,25 @@
+@media all and (max-width: 750px){
+  .pagination ul{
+    margin: 0 auto;
+    text-align: center;
+    padding: px2rem(50) 0;
+  }
+  .pagination ul li {
+      padding: 0 px2rem(10);
+      font-size: px2rem(24);
+      min-width: px2rem(60);
+      min-height: px2rem(60);
+      line-height: px2rem(58);
+      margin: 0 px2rem(10)
+  }
+  // .pagination li input {
+  //   padding: px2rem(5) px2rem(10);
+  //   width: px2rem(40);
+  //   height: px2rem(50);
+  //   line-height: px2rem(48);
+  //   margin: 0 px2rem(10);
+  // }
+  .pagination ul li.totalPage{
+      display: none;
+  }
+}

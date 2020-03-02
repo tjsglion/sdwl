@@ -1,0 +1,120 @@
+@media all and (min-width: $max-width-1190) {
+  .business-car-left{
+    width: 380px;
+    .left-img{
+      height: 202px;
+    }
+    .left-content,
+    .left-info{
+      padding: 0 30px 0 22px;
+    }
+    .left-content{
+      .content-desc{
+        max-height: 250px;
+        overflow-y: auto;
+        margin: 0 -30px 0 -22px;
+        padding: 0 30px 0 22px;
+      }
+    }
+    .left-info{
+      bottom:30px;
+    }
+    .info-common{
+      @include displayInlineBlock;
+      width: 50%;
+      font-size: 13px;
+      color: $search-result-font-color;
+      margin-top: 26px;
+      .common-title{
+        line-height: 38px;
+      }
+      .desc{
+        color: $nav-bg-color;
+        line-height: 22px;
+      }
+    }
+  }
+  .business-car-right{
+    width: 785px;
+    margin-left: 25px;
+    // padding-left: 44px;
+    .car-desc-info{
+      .desc-left{
+        margin-left: 35px;
+        width: 190px;
+      }
+      .desc-right{
+        width: 505px;
+        padding: 2px 40px 0 15px;
+      }
+    }
+  }
+}
+
+@media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+  .business-car-left{
+    width: 290px;
+    .left-img{
+      height: 156px;
+    }
+    .left-content,
+    .left-info{
+      padding: 0 15px 0 22px;
+    }
+    .left-content{
+      .content-desc{
+        max-height: 300px;
+        overflow-y: auto;
+        padding: 0 15px 0 22px;
+        margin: 0 -15px 0 -22px;
+      }
+    }
+    .left-info{
+      bottom:27px;
+    }
+    .info-phone{
+      margin-top: 14px;
+    }
+    .info-common{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      font-size: 13px;
+      color: $search-result-font-color;
+      .common-title,
+      .desc{
+        line-height: 22px;
+      }
+      .common-title{
+        width: 52px;
+
+      }
+      .common-desc{
+        width: 145px;
+        margin-left: 20px;
+        color: $nav-bg-color;
+      }
+    }
+    .info-address{
+      margin-top: 10px;
+    }
+  }
+  .business-car-right{
+    width: 680px;
+    margin-left: 10px;
+    // padding-left: 44px;
+    .car-logo-list{
+      padding-left: 44px;
+    }
+    .car-desc-info{
+      .desc-left{
+        margin-left: 35px;
+        width: 190px;
+      }
+      .desc-right{
+        width: 430px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

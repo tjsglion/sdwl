@@ -1,0 +1,37 @@
+@media all and (min-width: $max-width-1190){
+  .business-item{
+    .cel-common-txt{
+      margin-top: 46px;
+      font-size: 12px;
+      color: $font-color-blank;
+      line-height: 24px;
+      // column-count: 2;
+      column-width: 350px;
+      column-gap: 30px;
+      .txt-info{
+        display: block;
+      }
+    }
+  }
+  .business-item:last-child{
+    width: 810px;
+    padding: 0 35px;
+    max-height: 250px;
+  }
+}
+@media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+  .business-item{
+    .cel-common-txt{
+      margin-top: 46px;
+      font-size: 12px;
+      color: $font-color-blank;
+      line-height: 24px;
+      width: 530px;
+      margin-left: 38px;
+      .txt-info{
+        display: block;
+      }
+    }
+  }
+  // class="footerPage-dj"
+}

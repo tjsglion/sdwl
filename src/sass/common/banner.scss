@@ -1,0 +1,71 @@
+.banner{
+  position: relative;
+  width: 100%;
+  height: $banner-height;
+  &.banner-bg1{
+    background: $business-banner-bg url(../img/b1.png) no-repeat center;
+  }
+  &.banner-bg2{
+    background: $contact-banner-bg url(../img/b2.png) no-repeat center;
+  }
+  &.banner-dj{
+    @media all and (min-width: $max-width-1190){
+      background: $banner-bg-color-dj url(../img/dj-b1.png) no-repeat center;
+      background-size: 1580px 130px;
+    }
+    @media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+      background: $banner-bg-color-dj url(../img/dj-b1-980.png) no-repeat center;
+      background-size: 1430px 130px;
+    }
+    @media all and (max-width: $min-width-750) {
+      background: $banner-bg-color-dj url(../img/wap_banner.png) no-repeat center;
+      width: 100%;
+      height: px2rem(200);
+      background-size: contain;
+    }
+  }
+  .banner-ctx{
+    position: relative;
+    height: 100%;
+    .banner-t1,
+    .banner-t2,
+    .banner-t3,
+    .banner-t4,
+    .banner-t5,
+    .banner-t6{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .banner-t1{
+      width: 200px;
+      height: 140px;
+      background: url(../img/t1.png) no-repeat center;
+    }
+    .banner-t2{
+      width: 220px;
+      height: 146px;
+      background: url(../img/t2.png) no-repeat center;
+    }
+    .banner-t3{
+      width: 200px;
+      height: 130px;
+      background: url(../img/t3.png) no-repeat center;
+    }
+    .banner-t4{
+      width: 220px;
+      height: 138px;
+      background: url(../img/t4.png) no-repeat center;
+    }
+    .banner-t5{
+      width: 172px;
+      height: 147px;
+      background: url(../img/t5.png) no-repeat center;
+    }
+    .banner-t6{
+      width: 190px;
+      height: 135px;
+      background: url(../img/t6.png) no-repeat center;
+    }
+  }
+}

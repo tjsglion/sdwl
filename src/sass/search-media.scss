@@ -1,0 +1,74 @@
+@media all and (min-width: $max-width-1190) {
+  .search-btn-info{
+    width: 1080px;
+    margin-left: 110px;
+  }
+}
+@media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+  .search-btn-info{
+    // width: 1080px;
+    margin-left: 110px;
+  }
+}
+@media all and (max-width: $min-width-750) {
+  #main .main-wrap,
+  .main-wrap{
+    padding: 0;
+  }
+  .mobile-hide{
+    display: none;
+  }
+  .mobile-show{
+    display: block;
+  }
+  .search-desc{
+    padding: 0 px2rem(30);
+    .search-desc-text{
+      height: px2rem(110);
+      line-height: px2rem(110);
+      font-size: px2rem(24);
+      .search-icon{
+        font-size: px2rem(50);
+        width: px2rem(110);
+        left: px2rem(30);
+      }
+    }
+  }
+  .search-list-result{
+    width: px2rem(750);
+    overflow: hidden;
+    padding: 0 px2rem(30);
+    .search-item{
+      position: relative;
+      height: px2rem(140);
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      color: $search-result-font-color;
+      align-items: center;
+      width: px2rem(750);
+      padding: 0 px2rem(100) 0 px2rem(30);
+      .search-h2{
+        border-bottom: none;
+        font-size: px2rem(28);
+        white-space: normal;
+        line-height: 1.2;
+      }
+      .icon{
+        position: absolute;
+        right: px2rem(30);
+        top: px2rem(50);
+        font-size: px2rem(40);
+        color: $nav-bg-color;
+      }
+    }
+    .news-search-btn{
+      margin: 0 auto;
+      width: px2rem(690);
+      
+    }
+  }
+  .search-btn-info{
+    margin-left: px2rem(30);
+  }
+}

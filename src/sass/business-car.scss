@@ -1,0 +1,356 @@
+@charset "UTF-8";
+@import "base/_normalize";
+@import 'custom/default';
+@import "common/common";
+@import "common/header";
+@import "common/footer";
+@import "common/banner";
+@import "common/breadcrumb";
+@import "./business-car-media.scss";
+
+.business-car-wrap{
+  width: 100%;
+  height: 855px;
+  font-size: 0;
+  background-color: $commun-bg-color;
+  .business-car-title{
+    height: 90px;
+    background-color: #4d4d4d;
+    padding: 19px 0;
+    position: relative;
+    .title-wrap{
+      // margin: 19px 0;
+      border-left: 4px solid $nav-bg-color;
+      text-indent: 20px;
+      .sub-title,
+      .sup-title{
+        line-height: 1;
+        color: #fff;
+      }
+      .sub-title{
+        font-size: $font-size-18;
+      }
+      .sup-title{
+        font-size: $font-size-22;
+        margin-top: 15px;
+      }
+      .car-logo{
+        position: absolute;
+        top: 50%;
+        right: 22px;
+        width: 43px;
+        height: 51px;
+        margin-top: -25px;
+        // background: url(../img/car-logo.png) center no-repeat;
+      }
+    }
+  }
+  .business-car-common,
+  .business-car-left{
+    @include displayInlineBlock;
+    font-size: 0;
+    margin-top: 17px;
+    // width: 380px;
+    height: 690px;
+    background-color: #fff;
+    position: relative;
+    .left-img{
+      width: 100%;
+      // background: pink;
+      // @media all and (min-width: $max-width-1190) {
+      //   background: url(../img/pxc.png) no-repeat center;
+      //   background-size: contain;
+      // }
+      // @media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+      //   background: url(../img/pxc-980.png) no-repeat center;
+      //   background-size: contain;
+      // }
+    }
+    .left-content{
+      margin-top: 4px;
+    }
+    .content-title{
+      line-height: 1;
+      margin: 32px 0 28px 0;
+      font-size: $font-size-18;
+      color: $car-font-color;
+    }
+    .content-desc{
+      font-size: $font-size-12;
+      color: #000;
+      line-height: 24px;
+    }
+  }
+  .left-info{
+    position: absolute;
+    width: 100%;
+    &::before{
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 24px;
+      right: 0;
+      height: 2px;
+      border-top: 2px solid #e6e6e6;
+    }
+  }
+
+  .business-car-right{
+    overflow: hidden;
+    position: relative;
+    .car-logo-list{
+      position: relative;
+      height: 80px;
+      // width: 500px;
+      overflow: hidden;
+      box-sizing: border-box;
+      // background: green;
+      // padding: 0 20px;
+      // padding-right: 24px;
+      // padding-right: 20px;
+      .logo-list{
+        position: absolute;
+        overflow: hidden;
+        // padding: 0 10px;
+        white-space: nowrap;
+        transition: left .3s ease;
+        font-size: 0;
+      }
+      .logo-item{
+        display: inline-block;
+        font-size: 40px;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        cursor: pointer;
+        // line-height: 80px;
+        .icon{
+          display: block;
+          margin-top: 25px;
+          margin-bottom: 2px;
+          font-size: 30px;
+          color: #666565;
+        }
+        .logo-title{
+          display: block;
+          font-size: 12px;
+          color: #666565;
+        }
+      }
+      .logo-item:hover,
+      .logo-item.active{
+        background: $nav-bg-color;
+        .icon,
+        .logo-title{
+          color: #fff;
+        }
+      }
+    }
+    .sub-brand-list{
+      box-sizing: border-box;
+      height: 40px;
+      background: rgba(0,0,0,.3);
+      position: absolute;
+      z-index: 100;
+      width: 100%;
+      .brand-list{
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        white-space: nowrap;
+        transition: left .3s ease;
+        font-size: 0;
+        .brand-item{
+          display: inline-block;
+          height: 100%;
+          text-align: center;
+          line-height: 40px;
+          cursor: pointer;
+          font-size: 14px;
+          padding: 0 25px;
+          box-sizing: border-box;
+          border-bottom: 2px solid transparent;
+          color: #fff;
+          &.active{
+            background: #0b0810;
+            border-color: $nav-bg-color;
+          }
+        }
+      }
+    }
+    .car-img-wrap,
+    .car-img-list{
+      position: relative;
+      width: 100%;
+      height: 450px;
+      // background: green;
+      .car-flexslider,
+      .car-flexslider .flex-viewport,
+      .car-flexslider .flex-viewport ul,
+      .car-flexslider .flex-viewport ul li{
+        height: 100%;
+      }
+      .car-flexslider .flex-viewport ul li img{
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .car-show-flexslider{
+      position: absolute;
+      height: 70px;
+      background: rgba(117, 119, 121, .6);
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      .flex-viewport,
+      .flex-viewport ul,
+      .flex-viewport ul li{
+        height: 70px;
+      }
+      .flex-viewport ul{
+        width: 100% !important;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        li{
+          width: 88px !important;
+          display: flex !important;
+          flex-direction: column;
+          justify-content: center;
+          opacity: .6;
+          transition: opacity .3;
+          &.flex-active-slide{
+            opacity: 1;
+          }
+        }
+      }
+      .flex-viewport ul li img{
+        display: block;
+        width: 80px;
+        height: 40px;
+        background: #fff;
+        padding: 5px;
+      }
+    }
+    .car-desc-info{
+      font-size: 0;
+      // margin-top: 40px;
+      .desc-left,
+      .desc-right{
+        @include displayInlineBlock;
+        margin-top: 26px;
+      }
+      .desc-left{
+        .title{
+          font-size: 16px;
+          color: $search-result-font-color;
+          line-height: 30px;
+        }
+        .desc{
+          font-size: 13px;
+          line-height: 22px;
+          color: $breadcrumb-font-color;
+        }
+      }
+      .desc-right{
+        color: $search-result-font-color;
+        font-size: 13px;
+        line-height: 24px;
+
+      }
+    }
+    .prev,
+    .next{
+      position: absolute;
+      height: 100%;
+      width: 44px;
+      text-align: center;
+      cursor: pointer;
+      background: #fff;
+      transition: all .3s;
+      z-index: 10;
+      &:hover{
+        background: #eee;
+        .icon{
+          color: #666565;
+        }
+      }
+      .icon{
+        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -7px;
+        margin-top: -7px;
+        color: #999;
+        // margin-top: px;
+      }
+      // background: green;
+    }
+    .prev{
+      left: 0;
+      .icon{
+        transform: rotate(180deg);
+      }
+    }
+    .next{
+      right: 0;
+    }
+    .brand-arrow{
+      opacity: .8;
+    }
+  }
+  .car-img-list{
+    position: relative;
+    height: 450px;
+    .img-list img{
+      width: 100%;
+      height: 450px;
+    }
+    .flex-control-nav{
+      position:absolute;bottom:0px;z-index:2;width:100%;text-align:center;
+      li{
+        display:inline-block;width:50px;height:4px;margin:0 5px;cursor:pointer;*display:inline;zoom:1;
+        a{
+          display: block; background: rgba(0,0,0,.3); width: 100%; height: 100%;font-size:0;
+          &.flex-active{
+            background: #fff;
+          }
+        }
+      }
+    }
+    .flex-direction-nav{
+      li a{
+        position: absolute;
+        top: 50%;
+        z-index: 200;
+        font-size: 40px;
+        background: #2f3030;
+        opacity: .8;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        transition: all .3s;
+        .icon{
+          position: relative;
+          top: -15px;
+          color: $nav-bg-color;
+        }
+
+        &:hover{
+          background: $nav-bg-color;
+          .icon{
+            color: #fff;
+          }
+        }
+      }
+
+      li a.flex-prev{
+        left:0px;
+        transform: rotate(180deg);
+      }
+      li a.flex-next{right:0px;}
+    }
+  }
+}

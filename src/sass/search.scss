@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import "base/_normalize";
+@import 'custom/default';
+@import "common/common";
+@import "common/header";
+@import "common/footer";
+@import "common/banner";
+@import "common/breadcrumb";
+
+$search-key-bg: #f0f4f7;
+$search-height: 110px;
+$search-icon-bg: #04a450;
+
+.mobile-show{
+  display: none;
+}
+.search-desc{
+  padding: 25px 0px;
+  background-color: $bg-default;
+  .search-desc-text{
+    position: relative;
+    height: $search-height;
+    line-height: $search-height;
+    text-align: center;
+    background: $search-key-bg;
+    font-size: $font-size-18;
+    color: $breadcrumb-font-color;
+    .search-icon{
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: $search-height;
+      background-color: $search-icon-bg;
+      .icon{
+        color: #fff;
+        font-size: 50px;
+        cursor: pointer;
+      }
+    }
+    .search-key,
+    .search-numb
+    {
+      color: $search-icon-bg;
+    }
+  }
+}
+.search-list-result{
+  padding-left: $search-height;
+  .search-item{
+    box-sizing: border-box;
+    border-top: 1px solid $border-default-color;
+    padding-right: 237px;
+    color: $search-result-font-color;
+    padding-bottom: 18px;
+    cursor: pointer;
+    .search-h2,
+    .search-result-desc{
+      font-size: $font-size;
+    }
+    .search-h2{
+      font-weight: bold;
+      line-height: 74px;
+      width: 844px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0;
+      margin: 0;
+    }
+    .search-result-desc{
+      line-height: 24px;
+    }
+  }
+
+  .search-btn{
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    background-color: $search-key-bg;
+    padding: 0;
+    border: none;
+    margin-bottom: 150px;
+  }
+}
+
+.search-btn-info{
+  @include loadMore();
+  // margin: 0 auto;
+  // margin-left: px2rem(30);
+}
+
+.no-data-tip{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #f0f4f7;
+  z-index: 1;
+  .no-data-text{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-16;
+    color: #333;
+  }
+}
+
+@import './search-media.scss'

@@ -1,0 +1,86 @@
+@mixin overflowHidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin subStyle {
+  margin-top: 12px;
+  font-size: $font-size-12;
+  line-height: 1;
+  color: $contact-pub-time-color;
+  > span:last-child{
+    margin-left: 15px;
+  }
+}
+
+@mixin displayInlineBlock {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@mixin loadMore () {
+  position: relative;
+  width: 788px;
+  height: 55px;
+  line-height: 54px;
+  margin: 20px 0;
+  background: #f0f4f7;
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s;
+  .icon-xinwenxiangxi{
+    position: absolute;
+    font-size: 30px;
+    top: 0px;
+    left: 50%;
+  }
+
+  &:hover{
+    background: $nav-bg-color;
+    .icon-xinwenxiangxi{
+      color: #fff;
+      margin-left: -65px;
+      &::after{
+        position: absolute;
+        right: -85px;
+        top: 0;
+        content: '加载更多';
+        width: 100px;
+        font-size: $font-size;
+      }
+    }
+  }
+  @media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+    width: 684px;
+    height: 55px;
+    line-height: 54px;
+    margin: 20px 0;
+  }
+  @media all and (max-width: $min-width-750) {
+    width: px2rem(690);
+    height: px2rem(120);
+    line-height: px2rem(120);
+    margin-top: px2rem(20);
+    .icon-xinwenxiangxi{
+      position: absolute;
+      font-size: px2rem(40);
+    }
+    &:hover{
+      background: $nav-bg-color;
+      .icon-xinwenxiangxi{
+        margin-left: px2rem(-65);
+        &::after{
+          right: px2rem(-100);
+          width: px2rem(100);
+          font-size: px2rem(24);
+        }
+      }
+    }
+  }
+}
+
+$rem: 50;
+@function px2rem($px) {
+  @return $px / $rem * 1rem;
+}

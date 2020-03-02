@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import "base/_normalize";
+@import 'custom/default';
+@import "common/common";
+@import "common/header";
+@import "common/footer";
+@import "common/banner";
+@import "common/breadcrumb";
+@import "common/btngroup";
+
+.flex-wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .flex-item{
+    margin-top: 32px;
+    .item-title{
+      box-sizing: border-box;
+      position: relative;
+      line-height: 80px;
+      margin-bottom: 20px;
+      font-size: $font-size;
+      &::before{
+        position: absolute;
+        bottom: 0px;
+        content: '';
+        width: 100%;
+        border-bottom: 1px solid $border-default-color;
+      }
+      .title-h2{
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        box-sizing: border-box;
+        line-height: 80px;
+        border-bottom: 1px solid $dj-font-color;
+        color: $dj-font-color;
+      }
+      .load-more{
+        position: absolute;
+        right: 0;
+        color: $breadcrumb-font-color;
+      }
+    }
+    .item-list{
+      line-height: 26px;
+      font-size: $font-size;
+      color: $breadcrumb-font-color;
+      position: relative;
+      .item-desc{
+        @include overflowHidden;
+      }
+      .item-time{
+        position: absolute;
+        right: 0px;
+        top: 0;
+        width: 85px;
+      }
+    }
+    .mobile-show{
+      display: none;
+    }
+  }
+}
+
+@import './dangjian-media.scss';

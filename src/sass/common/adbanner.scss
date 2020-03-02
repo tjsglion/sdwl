@@ -1,0 +1,19 @@
+@import './img/prize.png';
+@import './img/wx.png';
+@import './img/sj.png';
+.ad-banner{
+  .prize-img,
+  .wx-img,
+  .sj-img{
+    width: 360px;
+  }
+  .prize-img{
+    height: 300px;
+  }
+  .wx-img,
+  .sj-img
+  {
+    height: 130px;
+    margin-top: 10px;
+  }
+}

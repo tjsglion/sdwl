@@ -1,0 +1,42 @@
+@media all and (min-width: $max-width-1190){
+  .news-ad-wrap{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    .a-block,
+    .a-block .img-ad-common{
+      display: block;
+      width: 360px;
+    }
+    .img-prize
+    {
+      height: 300px;
+    }
+    .img-wx,
+    .img-sj{
+      margin-top: 10px;
+      height: 130px;
+    }
+  }
+}
+@media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+  .news-ad-wrap{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    .a-block,
+    .a-block .img-ad-common{
+      display: block;
+      width: 256px;
+    }
+    .img-prize
+    {
+      height: 214px;
+    }
+    .img-wx,
+    .img-sj{
+      margin-top: 10px;
+      height: 130px;
+    }
+  }
+}

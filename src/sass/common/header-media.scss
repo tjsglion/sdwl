@@ -1,0 +1,196 @@
+// media 查询
+@media all and (min-width: $max-width-1190) {
+  .header-nav .nav-item .nav-a,
+  .header-nav .nav-item .nav-a:before{
+    padding: 0 18px;
+  }
+  .header-nav .nav-item:first-child .nav-a{
+    padding: 0 30px;
+  }
+  .child-list .child-item:first-child{
+    margin-left: 15px;
+  }
+  .search-web{
+    > .icon{
+      margin-left: 12px;
+    }
+    .search-title{
+      margin-left: 55px;
+    }
+    .search-title .icon-xiala{
+      margin-left: 5px;
+    }
+  }
+  .search-common.search-input{
+    width: 234px;
+    padding: 0 8px;
+  }
+  .search-input .search-input-ctrl{
+    padding: 0 20px;
+    width: 190px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .search-web-detail{
+    width: 150px;
+    padding: 15px 0;
+  }
+  .search-web-detail .detail-item{
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+@media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
+  .header-nav .nav-item .nav-a,
+  .header-nav .nav-item .nav-a:before{
+    padding: 0 8px;
+  }
+  .header-nav .nav-item:first-child .nav-a{
+    padding: 0 20px;
+  }
+  .header-search{
+    // width: 120px;
+    // background: green;
+  }
+  .search-web{
+    > .icon{
+      margin-left: 5px;
+    }
+    .search-title{
+      margin-left: 35px;
+    }
+    .search-title .icon-xiala{
+      margin-left: 2px;
+    }
+  }
+}
+
+@media all and (max-width: $min-width-750) {
+  #headerPage{
+    height: px2rem(95);
+    line-height: px2rem(96);
+  }
+  $nav-mobile-bg-color: #1f1f1f;
+  .header .logo{
+    padding-top: px2rem(26);
+    padding-left: px2rem(30);
+  }
+  .nav-show-icon{
+    position: absolute;
+    right: px2rem(30);
+    top: 0px;
+    bottom: 0;
+    width: px2rem(95);
+    text-align: right;
+    .icon-caidan{
+      font-size: px2rem(40);
+      color: $nav-bg-color;
+    }
+  }
+  .header .logo .logo-a{
+    width: px2rem(336);
+    height: px2rem(48);
+  }
+  .mobile-hide{
+    display: none;
+  }
+  // .mobile-show{
+  //   display: show;
+  // }
+
+  .header-mobile-nav{
+    display: block;
+    position: fixed;
+    left: -200%;
+    top: 0;
+    bottom: 0;
+    width: px2rem(630);
+    background: $nav-color-a;
+    z-index: 1500;
+    transition: left .3s;
+    .mobile-nav-close{
+      position: absolute;
+      right: px2rem(-120);
+      width: px2rem(120);
+      height: px2rem(120);
+      line-height: px2rem(120);
+      background: #fff;
+      text-align: center;
+      cursor: pointer;
+      .icon{
+        font-size: px2rem(40);
+        color: $nav-bg-color;
+      }
+    }
+    .mobile-logo{
+      position: relative;
+      height: px2rem(120);
+      width: 100%;
+      background: url(../img/logo-mobile.png) center no-repeat;
+      background-size:  px2rem(432)  px2rem(57);
+    }
+    .mobile-nav{
+      // margin-top: px2rem(68);
+      // background: red;
+      .mobile-nav-item{
+        height: px2rem(120);
+        line-height: px2rem(120);
+        font-size: px2rem(32);
+
+        > a {
+          display: block;
+          color: #fff;
+          padding-left: px2rem(80);
+          box-sizing: border-box;
+          position: relative;
+          &::before{
+            position: absolute;
+            bottom: 0;
+            left: px2rem(80);
+            right: 0;
+            content: '';
+            border-bottom: 1px solid $car-font-color;
+          }
+          &:hover{
+            color: $nav-bg-color;
+            background-color: $nav-mobile-bg-color;
+            &::before{
+              border-bottom-color: $nav-mobile-bg-color;
+            }
+          }
+        }
+      }
+    }
+    .mobile-nav-search{
+      margin-top: px2rem(50);
+      padding: 0 px2rem(80);
+      width: 100%;
+      position: relative;
+      .mobile-search-input{
+        height: px2rem(120);
+        line-height: px2rem(80);
+        border-radius: 999px;
+        padding: 0 px2rem(120) 0 px2rem(60);
+        background-color: $nav-mobile-bg-color;
+        width: px2rem(490);
+        font-size: px2rem(40);
+        color: #999;
+        outline: none;
+        border: none;
+      }
+      > input::-webkit-input-placeholder {
+        color: #999;
+        font-size: px2rem(32);
+      }
+      .icon{
+        position: absolute;
+        top: px2rem(10);
+        right: px2rem(120);
+        color: #fff;
+        font-size: px2rem(80);
+      }
+    }
+  }
+}
