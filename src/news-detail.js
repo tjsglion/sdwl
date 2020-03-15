@@ -75,7 +75,7 @@ import moment from 'moment';
             <span class="sub-tite-common">发布者: <span class="pub-name">${publisher || '物流集团'}</span></span>
             <span class="sub-tite-common ml">浏览次数: <span class="scale-time">${count}</span></span>
           </div>
-          <div style="font-size: 12px; line-height: 1.5; margin-top: 10px; max-height: 140px; min-height: 80px;">
+          <div class="like-new-desc" style="font-size: 12px; line-height: 1.5; margin-top: 10px; max-height: 140px; min-height: 80px;">
             ${newsAbstract}
           </div>
         </div>

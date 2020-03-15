@@ -139,9 +139,9 @@ $(function () {
       window.location.href = `business.html?tab=${index}`
     }
   })
-  tap('#blPageMobile', '.bl-close', function () {
-    $('#blPageMobile').removeClass('oyblShow')
-  })
+  // tap('#blPageMobile', '.bl-close', function () {
+  //   $('#blPageMobile').removeClass('oyblShow')
+  // })
   // 大事件
   let bigEvents = function (cb) {
     // api.GetBigEvents({pageNo: 1, pageSize: 100, simple: true}).then(res => {
@@ -337,6 +337,6 @@ $(function () {
   mobileSlider();
   operateNav();
 
-  FloatAd('#floatAd');
+  // FloatAd('#floatAd');
   // FloatAd('#floatAd2', 3, 2, 50);
 });

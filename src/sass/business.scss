@@ -1,9 +1,11 @@
 @charset "UTF-8";
+@import "vendors/bxslider.css";
 @import "base/_normalize";
 @import 'custom/default';
 @import "common/common";
 @import "common/header";
 @import "common/footer";
+// @import "vendors/bxslider.css";
 
 .business-banner{
   position: relative;
@@ -66,6 +68,10 @@ body > .business-tab,
     .title{
       color: #fff;
       transition: all .2s;
+    }
+    .icon-gaosuwuliuwuliuguganwang{
+      font-size: 30px;
+      // transform: scale(1.4);
     }
   }
   .tab-header:hover,
@@ -292,6 +298,7 @@ body > .business-tab,
     .block-title{
       margin-top: 30px;
       height: 22px;
+      padding-right: 10px;
     }
     .company-name{
       position: absolute;
@@ -301,67 +308,7 @@ body > .business-tab,
       line-height: 1.2;
       top: -8px;
     }
-    .block-img{
-      margin-top: 8px;
-      height: 130px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      img{
-        width: 100%;
-        height: 100%;
-      }
-      .img-m-t{
-        margin-top: 10px;
-      }
-      .block-img-5{
-        width: 211px;
-        height: 97px;
-        margin-left: -15px;
-        margin-top: 30px;
-      }
-      .block-img-6{
-        width: 252px;
-        height: 83px;
-        margin-top: 40px;
-        margin-left: -30px;
-      }
-      .block-img-7{
-        background: #00030a;
-      }
-
-      .play-model{
-        position: absolute;
-        left: 0;
-        top: 100%;
-        // top: 0;
-        width: 100%;
-        height: 100%;
-        transition: all .3s;
-        background: rgba(0,0,0,.8);
-      }
-      .icon-bofang{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width:56px;
-        height: 56px;
-        color: #666;
-        font-size: 50px;
-        margin-left: -28px;
-        margin-top: -28px;
-        cursor: pointer;
-        &:hover{
-          color: #fff;
-        }
-      }
-      &:hover{
-        .play-model{
-          top: 0;
-        }
-      }
-    }
+    
     .desc,
     .block-btn{
       font-size: $font-size-12;
@@ -522,9 +469,119 @@ body > .business-tab,
       }
     }
   }
+  .ong-item{
+    height: 190px;
+    padding-right: 20px;
+    .block-img{
+      display: block;
+      height: 100%;
+    }
+  }
+  .block-img{
+    margin-top: 8px;
+    height: 130px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .img-m-t{
+      margin-top: 10px;
+    }
+    .block-img-5{
+      width: 211px;
+      height: 97px;
+      margin-left: -15px;
+      margin-top: 30px;
+    }
+    .block-img-6{
+      width: 252px;
+      height: 83px;
+      margin-top: 40px;
+      margin-left: -30px;
+    }
+    .block-img-7{
+      background: #00030a;
+    }
 
+    .play-model{
+      position: absolute;
+      left: 0;
+      top: 100%;
+      // top: 0;
+      width: 100%;
+      height: 100%;
+      transition: all .3s;
+      background: rgba(0,0,0,.8);
+    }
+    .icon-bofang{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width:56px;
+      height: 56px;
+      color: #666;
+      font-size: 50px;
+      margin-left: -28px;
+      margin-top: -28px;
+      cursor: pointer;
+      &:hover{
+        color: #fff;
+      }
+    }
+    &:hover{
+      .play-model{
+        top: 0;
+      }
+    }
+  }
+}
+.tab-body-right-two{
+  padding-top: 25px;
 }
 
+.bx-wrapper{
+  border: none;
+}
+.mt-tab{
+  margin-top: -30px;
+  .bx-viewport{
+    height: 450px;
+  }
+  .bx-wrapper .bx-pager, 
+  .bx-wrapper .bx-controls-auto{
+    bottom: -20px;
+
+  }
+  .bx-wrapper .bx-pager.bx-default-pager a:hover, 
+  .bx-wrapper .bx-pager.bx-default-pager a.active, 
+  .bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background: #04a450;
+  }
+  
+  .block-info {
+    .block-title{
+      display: flex;
+      align-items: center;
+      margin-top: 25px;
+      line-height: 1.2;
+      padding-right: 10px;
+    }
+    .block-img{
+      margin-top: 5px;
+    }
+  }
+  .block-btn{
+    top: 310px;
+  }
+  .block-service{
+    top: 350px;
+  }
+  
+}
 body > .business-tab{
   position: fixed;
   top: -200px;

@@ -107,13 +107,23 @@
   .banner-item{
     // height:400px;
     height: 345px;
+    .b_t_0,
     .b_t_1,
     .b_t_2,
     .b_t_3,
     .b_t_4,
-    .b_t_5{
+    .b_t_5,
+    .b_t_6{
       position: absolute;
       top: 90px;
+    }
+    .b_t_0{
+      background: url(../img/b_t_0.png) center no-repeat;
+      background-size: contain;
+      width: 694px;
+      height: 246px;
+      right: -50px;
+      top: 40px;
     }
     .b_t_1{
       background: url(../img/b_t_1.png) center no-repeat;
@@ -132,9 +142,10 @@
     .b_t_3{
       background: url(../img/b_t_3.png) center no-repeat;
       background-size: contain;
-      width: 481px;
-      height: 129px;
-      right: 0;
+      width: 818px;
+      height: 352px;
+      left: -110px;
+      top: -10px;
     }
     .b_t_4{
       background: url(../img/b_t_4.png) center no-repeat;
@@ -149,6 +160,14 @@
       width: 320px;
       height: 124px;
       right: 0;
+    }
+    .b_t_6{
+      background: url(../img/b_t_6.png) center no-repeat;
+      background-size: contain;
+      width: 598px;
+      height: 249px;
+      right: -40px;
+      top: 35px;
     }
     .fl{
       float:left;
@@ -167,6 +186,7 @@
     height: 100%;
     cursor: pointer;
   }
+  .index_banner_0,
   .index_banner_1,
   .index_banner_2,
   .index_banner_3,
@@ -175,6 +195,10 @@
     @media all and (max-width: $min-width-750) {
       // width: px2rem(750);
     }
+  }
+  .index_banner_0{
+    background: url(../img/index_banner_0.jpg) center no-repeat;
+    background-size: cover;
   }
   .index_banner_1{
     background: url(../img/index_banner_1.png) center no-repeat;
@@ -185,7 +209,7 @@
     background-size: cover;
   }
   .index_banner_3{
-    background: url(../img/index_banner_3.png) center no-repeat;
+    background: url(../img/index_banner_3.jpg) center no-repeat;
     background-size: cover;
   }
   .index_banner_4{
@@ -194,6 +218,10 @@
   }
   .index_banner_5{
     background: url(../img/index_banner_5.png) center no-repeat;
+    background-size: cover;
+  }
+  .index_banner_6{
+    background: url(../img/index_banner_3.png) center no-repeat;
     background-size: cover;
   }
   .index-notice{
@@ -269,6 +297,7 @@
       display: block;
       width: 260px;
       height: 190px;
+      margin-top: 5px;
     }
     img{
       width: 100%;
@@ -291,7 +320,8 @@
       .news-info-span{
         display: block;
         font-size: $font-size;
-        line-height: 24px;
+        // line-height: 24px;
+        line-height: 28px;
         color: $breadcrumb-font-color;
       }
     }
@@ -338,7 +368,8 @@
       margin-top: 22px;
       .tab-body-item{
         font-size: $font-size;
-        line-height: 24px;
+        // line-height: 24px;
+        line-height: 30px;
         font-size: 0;
         .item-time,
         .item-desc{
@@ -452,8 +483,8 @@
     cursor: pointer;
     // width: 500px;
     // background: $train-bg-color;
-    background: url(../img/train.png) left bottom no-repeat;
-    background-size: contain;
+    background: url(../img/train.jpg) left bottom no-repeat;
+    background-size: cover;
     .train-info{
       margin-top: 43px;
       box-sizing: border-box;
@@ -565,7 +596,8 @@
     cursor: pointer;
     overflow: hidden;
     .item-desc{
-      font-size: $font-size-18;
+      // font-size: $font-size-18;
+      font-size: $font-size;
       font-weight: 500;
       line-height: 1;
       padding-top: 18px;
@@ -614,7 +646,8 @@
         font-size: 14px;
         color: #fff;
         outline: none;
-        line-height: 30px;
+        // line-height: 30px;
+        line-height: 24px;
         background-color: $nav-bg-color;
         border-radius: 999px;
         // padding: 0 35px 0 10px;
@@ -648,12 +681,20 @@
   .img-6::before{
     background: url(../img/img-6.png) no-repeat;
   }
+  .img-7::before{
+    background: url(../img/img-7.jpg) no-repeat;
+  }
+  .img-8::before{
+    background: url(../img/img-8.jpg) no-repeat;
+  }
   .img-1::before,
   .img-2::before,
   .img-3::before,
   .img-4::before,
   .img-5::before,
-  .img-6::before{
+  .img-6::before,
+  .img-7::before,
+  .img-8::before{
     position: absolute;
     left: 0;
     top: 0;

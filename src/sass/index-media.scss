@@ -105,11 +105,12 @@
     height: 315px;
     .business-item{
       .item-desc{
-        font-size: $font-size-18;
+        // font-size: $font-size-18;
+        // font-size: $font-size-14;
       }
       .item-title{
         padding-top: 25px;
-        font-size: $font-size-24;
+        font-size: $font-size-22;
       }
       .icon{
         font-size: 50px;
@@ -309,10 +310,10 @@
     height: 256px;
     .business-item{
       .item-desc{
-        font-size: $font-size-16;
+        // font-size: $font-size-16;
       }
       .item-title{
-        font-size: $font-size-20;
+        font-size: $font-size-18;
         padding-top: 15px;
       }
       .icon{
@@ -422,17 +423,26 @@
   .index-banner,
   .index-banner .banner-item{
     height: px2rem(400);
+    .b_t_0,
     .b_t_1,
     .b_t_2,
     .b_t_3,
     .b_t_4,
-    .b_t_5{
+    .b_t_5,
+    .b_t_6{
       top: px2rem(90);
+    }
+    .b_t_0{
+      width: px2rem(694);
+      height: px2rem(246);
+      right: px2rem(-30);
+      top: px2rem(30);
     }
     .b_t_1{
       width: px2rem(478);
       height: px2rem(125);
       left: px2rem(30);
+      // right: px2rem(0);
     }
     .b_t_2{
       width: px2rem(401);
@@ -440,9 +450,11 @@
       left: px2rem(30);
     }
     .b_t_3{
-      width: px2rem(481);
-      height: px2rem(129);
-      right: px2rem(30);
+      width: px2rem(818);
+      height: px2rem(352);
+      // left: px2rem(30);
+      left: px2rem(-80);
+      top: px2rem(-20);
     }
     .b_t_4{
       width: px2rem(470);
@@ -453,6 +465,13 @@
       width: px2rem(320);
       height: px2rem(124);
       right: px2rem(30);
+    }
+    .b_t_6{
+      width: px2rem(598);
+      height: px2rem(249);
+      right: px2rem(-30);
+      // top: 0;
+      top: px2rem(30);
     }
     .index-notice{
       height: px2rem(48);
@@ -500,6 +519,10 @@
   }
 
   .index-banner{
+    .index_banner_0{
+      background: url(../img/index_br_0_750.png) center no-repeat;
+      background-size: cover;
+    }
     .index_banner_1{
       background: url(../img/index_br_1_750.png) center no-repeat;
       background-size: cover;
@@ -519,6 +542,10 @@
     .index_banner_5{
       background: url(../img/index_br_5_750.png) center no-repeat;
         background-size: cover
+    }
+    .index_banner_6{
+      background: url(../img/index_br_6_750.png) center no-repeat;
+      background-size: cover;
     }
   }
 
@@ -671,7 +698,7 @@
         padding-top: px2rem(18);
       }
       .item-desc{
-        font-size: px2rem(24);
+        font-size: px2rem(20);
         line-height: 1;
         padding-top: px2rem(30);
       }

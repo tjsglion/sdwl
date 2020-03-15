@@ -96,6 +96,11 @@
       width: 140px;
     }
   }
+  .mt-tab{
+    .block-service{
+      padding: 20px 18px 0;
+    }
+  }
 }
 @media all and (min-width: $min-width-750) and (max-width: $max-width-1190){
   .tab-body-left{
@@ -121,6 +126,9 @@
     }
     .title-another{
       margin-left: 10px;
+    }
+    .block-phone{
+      max-width: 126px;
     }
   }
   .block-service{
@@ -291,6 +299,22 @@
       padding: px2rem(30) px2rem(20);
       background: #fff;
       width: px2rem(750);
+      .block-img,
+      .block-info .desc{
+        display: inline-block;
+        vertical-align: top;
+      }
+      .block-img{
+        width: px2rem(270);
+        height: px2rem(175);
+        margin: px2rem(30) 0 0;
+        .block-img-5,
+        .block-img-6{
+          width: 100%;
+          height: 100%;
+          margin: 0;
+        }
+      }
       .block-info{
         display: block;
         height: auto;
@@ -313,26 +337,7 @@
             }
           }
         }
-        .block-img,
-        .desc{
-          display: inline-block;
-          vertical-align: top;
-        }
-        .block-img{
-          width: px2rem(270);
-          height: px2rem(175);
-          margin: px2rem(30) 0 0;
-          .block-img-5,
-          .block-img-6{
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            // width: px2rem(250);
-            // height: px2rem(150);
-            // margin-left: px2rem(-15);
-            // margin-top: px2rem(30);
-          }
-        }
+        
         .desc{
           width: px2rem(410);
           font-size: px2rem(24);
@@ -347,7 +352,6 @@
           display: inline-block !important;
         }
       }
-
 
       .block-service{
         display: flex;
@@ -392,7 +396,7 @@
             line-height: px2rem(80);
             border: px2rem(1) solid #e6e6e6;
             margin-bottom: px2rem(10);
-            font-size: px2rem(24);
+            font-size: px2rem(30);
             // padding-left: px2rem(75);
           }
           .icon{
@@ -411,6 +415,26 @@
       }
       .mobile-hide{
         display: none;
+      }
+
+      .mb-show-tab{
+        .block-info:nth-child(2n) {
+          margin-top: px2rem(30);
+        }
+      }
+
+      .ong-item{
+        // width: px2rem(750);
+        // padding: px2rem(30);
+        padding-right: px2rem(40);
+        margin-top: 0;
+        margin-bottom: px2rem(50);
+        overflow: hidden;
+        .block-img{
+          // width: 100%;
+          width: px2rem(710);
+          height: px2rem(320);
+        }
       }
     }
     .tab-body-bg{

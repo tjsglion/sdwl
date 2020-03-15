@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import './vendors/flexslider';
 import './sass/business.scss';
 import './img/business-1.png';
 import './img/business-2.png';
@@ -14,6 +15,7 @@ import api from './fetch/api';
 // import './vendors/loading'
 import {changeScreen, mobileSlider, operateNav} from './utils/urlFilter';
 import {tap} from './utils/tap'
+import './vendors/bxSlider';
 (function ($) {
 
    /** 计算右边距离 */
@@ -55,6 +57,7 @@ import {tap} from './utils/tap'
   let arr = [tab1_top, tab2_top, tab3_top, tab4_top, tab5_top];
 
   let cloneCache = null;
+  let regx1 = '青岛西海岸港口';
   if (!cloneCache) cloneCache = $('.business-tab').clone(true);
   $('body').append($(cloneCache)).addClass('clone-tab');
   $('.business-tab .tab-header').on('click', function () {
@@ -125,6 +128,11 @@ import {tap} from './utils/tap'
 
   }
 
+  /**
+   * @description 加载联系人信息
+   * @param {*} person 
+   * @param {*} type 
+   */
   function initPerson (person, type) {
     if (!person) return false;
     let personInfo = person.companyPrincipals.map((phone, index) => {
@@ -143,6 +151,7 @@ import {tap} from './utils/tap'
         `
       })
       return `
+        <swiper>
         <div class="block-service mobile-hide">
           <span class="block-scale">${type}</span>
           <div class="block-phone">
@@ -164,6 +173,27 @@ import {tap} from './utils/tap'
     }).join('')
     return personInfo;
   }
+ 
+  const hasPlay = function (obj, regx, imgClass = '') {
+    // let regx1 = '青岛西海岸港口';
+    let img = ``;
+    if (obj.companyName.match(regx)) {
+      img = `
+        <img class="${imgClass}" src="${obj.companyImage}" />
+        <div class="play-model">
+          <i class="icon font_family icon-bofang"></i>
+        </div>
+      `
+    } else {
+      img = `<img class="${imgClass}" src="${obj.companyImage}" />`
+    }
+    // return img;
+    return `
+      <div class="block-img mobile-toggle-hide">
+          ${img}
+      </div>
+    `;
+  }
   /**
    *
    * @param {*} target 目标对象
@@ -172,25 +202,26 @@ import {tap} from './utils/tap'
    * @param {*} businessType 业务类型: 业务洽谈|业务客服
    * @param {*} moreInfo 更多: 园区详情|更多详情
    */
-  function initCompany (target, arr, tabType, businessType, moreInfo) {
+  function initCompany (arr, target, tabType, businessType, moreInfo) {
     let oneObj = arr[0]
     let twoObj = arr[1]
     let personOneInfo = initPerson(oneObj, businessType)
     let personTwoInfo = twoObj && initPerson(twoObj, businessType)
-    let regx1 = '青岛西海岸港口'
+    
     let oneImg = ``
     let companyOneClazz = oneObj.companyName.length > 15 ? 'company-name company-name-more' : `company-name`
     let companyTwoClazz = twoObj && twoObj.companyName.length > 15 ? 'company-name company-name-more' : 'company-name'
-    if (oneObj.companyName.match(regx1)) {
-      oneImg = `
-        <img src="${oneObj.companyImage}" />
-        <div class="play-model">
-          <i class="icon font_family icon-bofang"></i>
-        </div>
-      `
-    } else {
-      oneImg = `<img src="${oneObj.companyImage}" />`
-    }
+    // if (oneObj.companyName.match(regx1)) {
+    //   oneImg = `
+    //     <img src="${oneObj.companyImage}" />
+    //     <div class="play-model">
+    //       <i class="icon font_family icon-bofang"></i>
+    //     </div>
+    //   `
+    // } else {
+    //   oneImg = `<img src="${oneObj.companyImage}" />`
+    // }
+    oneImg = hasPlay(oneObj, regx1);
     let one = `
       <div class="block-info">
         <div class="block-title">
@@ -199,9 +230,7 @@ import {tap} from './utils/tap'
             <i class="icon font_family icon-xiala"></i>
           </span>
         </div>
-        <div class="block-img mobile-toggle-hide">
-            ${oneImg}
-        </div>
+        ${oneImg}
         <div class="desc mobile-toggle-hide">
           ${oneObj.companyAbstract}
         </div>
@@ -237,22 +266,121 @@ import {tap} from './utils/tap'
         </div>
       `
     }
-    console.log('====one:', one);
-    console.log('====two:', two);
-    (two && two.length > 0) ? $(target).empty().append(one).append(two) : $(target).empty().append(one);
+    (two && two.length > 0) ? $(target).addClass('tab-body-right-two').empty().append(one).append(two) : $(target).addClass('tab-body-right-two').empty().append(one);
   }
-  function initTab1 (arr) {
-    initCompany('.tab-1 .tab-body-right', arr, 0, '业务洽谈', '园区详情')
+
+  // 当列表长度只有一个时， 当前列表占满右侧
+  const initOneTabs = function (obj, target) {
+    let pcPerson = ``,
+        mobilePerson = ``;
+    obj.companyPrincipals.forEach((person, index) => {
+      let bT = index === 0 ? '业务洽谈' : '生产洽谈'
+      pcPerson += `
+        <div class="server-common">
+          <span class="block-scale">${bT}</span>
+          <div class="block-phone">
+            <span class="name">${person.name}</span>
+            <span class="number">${person.phone1}</span>
+          </div>
+        </div>
+      `
+      mobilePerson += `
+        <div class="block-service">
+          <span class="block-scale">${bT}</span>
+          <div class="block-phone">
+            <span class="name">${person.name}</span>
+            <span class="phone-number-span">
+              <a class="number" href="tel: ${person.phone1}"><i class="icon font_family icon-dianhua"></i>${person.phone1}</a>
+            </span>
+          </div>
+      </div>
+      `
+    });
+    let personInfo = `
+      <div class="right-server mobile-hide">
+        ${pcPerson}
+      </div>
+      <div class="right-server mobile-show">
+        ${mobilePerson}
+      </div>
+    `;
+
+    const oImg = hasPlay(obj, regx1, "block-img-8");
+    // <img class="block-img-8" src="${obj.companyImage}" />
+    let ctx = `
+      <div class="right-title">
+        <span class="title-span">${obj.companyName}</span>
+      </div>
+      <div class="gk-img ong-item">
+        ${oImg}
+      </div>
+      <div class="right-desc mobile-hide">
+        <span class="desc-info">
+          ${obj.companyAbstract}
+        </span>
+        <span class="desc-btn mobile-hide" data-tab="4" data-id="${obj.id}">更多详情 》</span>
+      </div>
+      ${personInfo}
+    `
+    $(target).empty().append(ctx);
   }
-  function initTab2 (arr) {
-    initCompany('.tab-2 .tab-body-right', arr, 1, '业务客服', '更多详情')
+  // 当列表长度大于二时， 添加轮播效果
+  // 当列表长度只有二个时， 分开显示
+  const initThirdTabs = function (obj, target, tabType, businessType, moreInfo) {
+    // $(target).addClass('bx-wrapper');
+    const oLis = obj.map(item => {
+      // 获取联系人信息
+      const oImg = hasPlay(item, regx1);
+      // const oneImg = `<img class="flexslider-img" src="${item.companyImage}" />`
+      return `
+        <div class="block-info">
+          <div class="block-title">
+            <span>${item.companyName}</span>
+            <span class="show-detail mobile-show">
+                <i class="icon font_family icon-xiala"></i>
+              </span>
+          </div>
+          ${oImg}
+          <div class="desc mobile-toggle-hide">
+            ${item.companyAbstract}
+          </div>
+          <div class="block-btn mobile-hide"  data-tab="${tabType}" data-id="${obj.id}">${moreInfo} 》</div>
+          ${initPerson(item, businessType)}
+        </div>
+      `;
+    }).join('');
+    const ctx = `
+      <div class="mt-tab mobile-hide">
+        <div class="bxslider">
+          ${oLis}
+        </div>
+      </div>  
+      <div class="mb-show-tab mobile-show">
+        ${oLis}
+      </div>    
+    `;
+    $(target).empty().append(ctx);
+    $('.bxslider').bxSlider({
+      slideWidth: 260,
+      minSlides: 2,
+      maxSlides: 3,
+      moveSlides: 1,
+      slideMargin: 10,
+      auto: true,
+      autoHover: true
+    });
   }
-  function initTab3 (arr) {
-    initCompany('.tab-3 .tab-body-right', arr, 2, '业务洽谈', '更多详情')
+  function initShowTabs (arr, target, type, title, text) {
+    if (arr.length === 1) {
+      // $('.tab-5 .tab-body-right').empty().append(ctx);
+      initOneTabs(arr[0], target);
+    } else if (arr.length === 2) {
+      initCompany(arr, target, type, title, text)
+    } else {
+      initThirdTabs(arr, target, type, title, text);
+    }
   }
-  function initTab4 (arr) {
-    initCompany('.tab-4 .tab-body-right', arr, 3, '业务洽谈', '更多详情')
-  }
+
   function initTab5 (obj) {
     let pcPerson = ``,
         mobilePerson = ``;
@@ -317,37 +445,30 @@ import {tap} from './utils/tap'
       let tab4Temp = []
       let tab5Temp = []
       let {list = []} = res;
-      if (list.length > 0) {
-        list.map(item => {
-          switch (+item.companyType) {
-            case 1:
-              tab1Temp.push(item);
-              break;
-            case 2:
-              tab2Temp.push(item);
-              break;
-            case 3:
-              tab3Temp.push(item);
-              break;
-            case 4:
-              let reg = '奥维俊杉'
-              if (item.companyName.match(reg)) {
-                tab4Temp[1] = item
-              } else {
-                tab4Temp[0] = item
-              }
-              break;
-            case 5:
-              tab5Temp.push(item);
-              break;
-          }
-        })
-      }
-      initTab1(tab1Temp)
-      initTab2(tab2Temp)
-      initTab3(tab3Temp)
-      initTab4(tab4Temp)
-      initTab5(tab5Temp[0])
+      list.forEach(item => {
+        switch (+item.companyType) {
+          case -1: // 其它 目前暂时保存的是欧亚的相关信息
+            tab1Temp.push(item);
+            break;
+          case 1: // 综合物流产业园
+            tab2Temp.push(item);
+            break;
+          case 2:
+            tab3Temp.push(item);
+            break;
+          case 3: // 商贸流通
+            tab4Temp.push(item);
+            break;
+          case 4: 
+            tab5Temp.push(item);
+        }
+      });
+      initShowTabs(tab1Temp, '.tab-1 .tab-body-right', 0, '业务洽谈', '更多详情');
+      initShowTabs(tab2Temp, '.tab-2 .tab-body-right', 1, '业务客服', '更多详情');
+      initShowTabs(tab3Temp, '.tab-3 .tab-body-right', 2, '业务洽谈', '更多详情');
+      initShowTabs(tab4Temp, '.tab-4 .tab-body-right', 3, '业务洽谈', '更多详情');
+      initShowTabs(tab5Temp, '.tab-5 .tab-body-right', 4, '业务洽谈', '更多详情');
+      // 绑定事件
       initTabTop();
     })
   }
@@ -355,5 +476,4 @@ import {tap} from './utils/tap'
   changeScreen();
   mobileSlider();
   operateNav();
-  // fetchData();
 })($);

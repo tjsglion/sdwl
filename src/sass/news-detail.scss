@@ -155,11 +155,12 @@
         line-height: 1.5;
       }
       .news-recommand-item-date{
-        width: 82px;
+        // width: 82px;
+        width: 90px;
       }
       .news-recommand-item-desc{
         margin-left: 20px;
-        max-width: 260px;
+        max-width: 250px;
         @include overflowHidden;
       }
     }
