@@ -100,7 +100,7 @@ import './vendors/bxSlider';
   }
   function initTabTop () {
     // 更多详情
-    $('.block-btn, .desc-btn').on('click', function () {
+    $('.block-btn, .desc-btn, .one-img-car').on('click', function () {
       let tab = $(this).attr('data-tab');
       let id = $(this).attr('data-id');
       let reg = /^true$/;
@@ -174,7 +174,7 @@ import './vendors/bxSlider';
     return personInfo;
   }
  
-  const hasPlay = function (obj, regx, imgClass = '') {
+  const hasPlay = function (obj, regx, imgClass = '', index) {
     // let regx1 = '青岛西海岸港口';
     let img = ``;
     if (obj.companyName.match(regx)) {
@@ -182,6 +182,20 @@ import './vendors/bxSlider';
         <img class="${imgClass}" src="${obj.companyImage}" />
         <div class="play-model">
           <i class="icon font_family icon-bofang"></i>
+        </div>
+        <div class="car-info-detail mobile-hide">
+          <div class="flex-left">
+            <span class="icon font_family icon-laosilaisi"></span>
+            <span class="icon font_family icon-binli"></span>
+            <span class="icon font_family icon-benchi"></span>
+            <span class="icon font_family icon-baoma"></span>
+            <span class="icon font_family icon-aodi"></span>
+            <span class="icon font_family icon-fute"></span>
+            <span class="icon font_family icon-dazhong"></span>
+          </div>
+          <div class="flex-right one-img-car" data-tab="${index}" data-id="${obj.id}" data-car="true">
+            <span class="flex-right-txt" >车系详情 》</span>
+          </div>
         </div>
       `
     } else {
@@ -252,8 +266,8 @@ import './vendors/bxSlider';
           <div class="block-title">
             <span class="${companyTwoClazz}">${twoObj.companyName}</span>
             <span class="show-detail mobile-show">
-                <i class="icon font_family icon-xiala"></i>
-              </span>
+              <i class="icon font_family icon-xiala"></i>
+            </span>
           </div>
           <div class="block-img mobile-toggle-hide">
             <img src="${twoObj.companyImage}" />
@@ -271,8 +285,7 @@ import './vendors/bxSlider';
 
   // 当列表长度只有一个时， 当前列表占满右侧
   const initOneTabs = function (obj, target) {
-    let pcPerson = ``,
-        mobilePerson = ``;
+    let pcPerson = ``, mobilePerson = ``;
     obj.companyPrincipals.forEach((person, index) => {
       let bT = index === 0 ? '业务洽谈' : '生产洽谈'
       pcPerson += `
@@ -305,22 +318,28 @@ import './vendors/bxSlider';
       </div>
     `;
 
-    const oImg = hasPlay(obj, regx1, "block-img-8");
+    const oImg = hasPlay(obj, regx1, "block-img-8", 4);
     // <img class="block-img-8" src="${obj.companyImage}" />
     let ctx = `
-      <div class="right-title">
-        <span class="title-span">${obj.companyName}</span>
+      <div class="right-ctx-wrap">
+        <div class="right-title">
+          <span class="title-span">${obj.companyName}</span>
+        </div>
+        <div class="gk-img ong-item mobile-hide">
+          ${oImg}
+        </div>
+        <div class="gk-mobile-show mobile-show">
+          <img class="gk-mobile-img" src="${obj.companyImage}" />
+          <div class="gk-desc">${obj.companyAbstract}</div>
+        </div>
+        <div class="right-desc mobile-hide">
+          <span class="desc-info">
+            ${obj.companyAbstract}
+          </span>
+          <span class="desc-btn mobile-hide" data-tab="4" data-id="${obj.id}">更多详情 》</span>
+        </div>
+        ${personInfo}
       </div>
-      <div class="gk-img ong-item">
-        ${oImg}
-      </div>
-      <div class="right-desc mobile-hide">
-        <span class="desc-info">
-          ${obj.companyAbstract}
-        </span>
-        <span class="desc-btn mobile-hide" data-tab="4" data-id="${obj.id}">更多详情 》</span>
-      </div>
-      ${personInfo}
     `
     $(target).empty().append(ctx);
   }
@@ -330,8 +349,6 @@ import './vendors/bxSlider';
     // $(target).addClass('bx-wrapper');
     const oLis = obj.map(item => {
       // 获取联系人信息
-      const oImg = hasPlay(item, regx1);
-      // const oneImg = `<img class="flexslider-img" src="${item.companyImage}" />`
       return `
         <div class="block-info">
           <div class="block-title">
@@ -340,11 +357,13 @@ import './vendors/bxSlider';
                 <i class="icon font_family icon-xiala"></i>
               </span>
           </div>
-          ${oImg}
+          <div class="block-img mobile-toggle-hide">
+            <img src="${item.companyImage}" />
+          </div>
           <div class="desc mobile-toggle-hide">
             ${item.companyAbstract}
           </div>
-          <div class="block-btn mobile-hide"  data-tab="${tabType}" data-id="${obj.id}">${moreInfo} 》</div>
+          <div class="block-btn mobile-hide"  data-tab="${tabType}" data-id="${item.id}">${moreInfo} 》</div>
           ${initPerson(item, businessType)}
         </div>
       `;
@@ -361,11 +380,11 @@ import './vendors/bxSlider';
     `;
     $(target).empty().append(ctx);
     $('.bxslider').bxSlider({
-      slideWidth: 260,
+      slideWidth: 265,
       minSlides: 2,
       maxSlides: 3,
       moveSlides: 1,
-      slideMargin: 10,
+      slideMargin: 5,
       auto: true,
       autoHover: true
     });
@@ -379,60 +398,6 @@ import './vendors/bxSlider';
     } else {
       initThirdTabs(arr, target, type, title, text);
     }
-  }
-
-  function initTab5 (obj) {
-    let pcPerson = ``,
-        mobilePerson = ``;
-    obj.companyPrincipals.map((person, index) => {
-      let bT = index === 0 ? '业务洽谈' : '生产洽谈'
-      pcPerson += `
-        <div class="server-common">
-          <span class="block-scale">${bT}</span>
-          <div class="block-phone">
-            <span class="name">${person.name}</span>
-            <span class="number">${person.phone1}</span>
-          </div>
-        </div>
-      `
-      mobilePerson += `
-        <div class="block-service">
-          <span class="block-scale">${bT}</span>
-          <div class="block-phone">
-            <span class="name">${person.name}</span>
-            <span class="phone-number-span">
-              <a class="number" href="tel: ${person.phone1}"><i class="icon font_family icon-dianhua"></i>${person.phone1}</a>
-            </span>
-            <!-- <span class="number">${person.phone1}</span> -->
-          </div>
-      </div>
-      `
-    });
-    let personInfo = `
-      <div class="right-server mobile-hide">
-        ${pcPerson}
-      </div>
-      <div class="right-server mobile-show">
-        ${mobilePerson}
-      </div>
-    `;
-    let ctx = `
-      <div class="right-title">
-        <span class="title-span">${obj.companyName}</span>
-      </div>
-      <div class="gk-img mobile-hide">
-        <img class="block-img-8" src="${obj.companyImage}" />
-      </div>
-      <div class="right-desc mobile-hide">
-        <span class="desc-info">
-          ${obj.companyAbstract}
-        </span>
-        <span class="desc-btn mobile-hide" data-tab="4" data-id="${obj.id}">更多详情 》</span>
-      </div>
-      ${personInfo}
-    `
-
-    $('.tab-5 .tab-body-right').empty().append(ctx);
   }
 
   function fetchData () {

@@ -160,6 +160,7 @@ import {tap} from './utils/tap'
         let contacts = res.list
         let str = contacts.map(item => {
           let company = maps[item.businessScopeId]
+          console.log(item.businessScopeId, '!!!!!', company);
           let {phone1, phone2, phone3, phone4, phone5} = item
           let phones = []
           if (phone1) phones.push(phone1)
