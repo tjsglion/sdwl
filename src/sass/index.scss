@@ -285,6 +285,7 @@
 
 /** 新闻 */
 .index-news-wrap{
+  display: flex;
   padding: 35px 0;
   font-size:0;
   .news-img,
@@ -305,6 +306,9 @@
     }
   }
   .news-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .news-title{
       line-height: 1.2;
       padding: 0;

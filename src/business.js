@@ -284,7 +284,7 @@ import './vendors/bxSlider';
   }
 
   // 当列表长度只有一个时， 当前列表占满右侧
-  const initOneTabs = function (obj, target) {
+  const initOneTabs = function (obj, target, type) {
     let pcPerson = ``, mobilePerson = ``;
     obj.companyPrincipals.forEach((person, index) => {
       let bT = index === 0 ? '业务洽谈' : '生产洽谈'
@@ -318,7 +318,7 @@ import './vendors/bxSlider';
       </div>
     `;
 
-    const oImg = hasPlay(obj, regx1, "block-img-8", 4);
+    const oImg = hasPlay(obj, regx1, "block-img-8", type);
     // <img class="block-img-8" src="${obj.companyImage}" />
     let ctx = `
       <div class="right-ctx-wrap">
@@ -336,7 +336,7 @@ import './vendors/bxSlider';
           <span class="desc-info">
             ${obj.companyAbstract}
           </span>
-          <span class="desc-btn mobile-hide" data-tab="4" data-id="${obj.id}">更多详情 》</span>
+          <span class="desc-btn mobile-hide" data-tab="${type}" data-id="${obj.id}">更多详情 》</span>
         </div>
         ${personInfo}
       </div>
@@ -392,7 +392,7 @@ import './vendors/bxSlider';
   function initShowTabs (arr, target, type, title, text) {
     if (arr.length === 1) {
       // $('.tab-5 .tab-body-right').empty().append(ctx);
-      initOneTabs(arr[0], target);
+      initOneTabs(arr[0], target, type);
     } else if (arr.length === 2) {
       initCompany(arr, target, type, title, text)
     } else {

@@ -248,7 +248,12 @@
     }
     .news-info{
       margin-top: 15px;
-      height: 75px;
+      // height: 75px;
+      height: 170px;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
       overflow: hidden;
     }
   }
