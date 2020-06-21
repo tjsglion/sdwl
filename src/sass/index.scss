@@ -86,7 +86,7 @@
 }
 
 /** banner start */
-.index-banner .flex-control-nav{position:absolute;bottom:68px;z-index:2;width:100%;text-align:center;}
+.index-banner .flex-control-nav{position:absolute;bottom:20px;z-index:2;width:100%;text-align:center;}
 .index-banner .flex-control-nav li{display:inline-block;width:54px;height:6px;margin:0 5px;cursor:pointer;*display:inline;zoom:1;}
 .index-banner .flex-control-nav li a{display: block; background: rgba(0,0,0,.3); width: 100%; height: 100%;font-size:0;}
 .index-banner .flex-control-nav li a.flex-active{background: #fff;}
@@ -101,7 +101,7 @@
     z-index: 1;
     height: 100%;
     height: 345px;
-    margin-bottom: 48px;
+    // margin-bottom: 48px;
 
   }
   .banner-item{
@@ -323,9 +323,9 @@
     .news-info{
       .news-info-span{
         display: block;
-        font-size: $font-size;
+        font-size: $font-size-16;
         // line-height: 24px;
-        line-height: 28px;
+        line-height: 26px;
         color: $breadcrumb-font-color;
       }
     }
@@ -378,15 +378,16 @@
         .item-time,
         .item-desc{
           @include displayInlineBlock();
-          font-size: $font-size;
+          font-size: $font-size-16;
         }
         .item-time{
-          width: 88px;
+          // width: 88px;
+          width: 104px;
           color: $contact-pub-time-color;
         }
         .item-desc{
           // width: 280px;
-          width: 260px;
+          width: 240px;
           color: $breadcrumb-font-color;
           @include overflowHidden();
         }

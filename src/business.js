@@ -383,7 +383,7 @@ import './vendors/bxSlider';
       slideWidth: 265,
       minSlides: 2,
       maxSlides: 3,
-      moveSlides: 1,
+      moveSlides: 2,
       slideMargin: 5,
       auto: true,
       autoHover: true

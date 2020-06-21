@@ -25,20 +25,20 @@ $(function () {
     })
   };
   // 加载集团新闻2条
-  loadNewsByType({pageNo: 1, pageSize: 2, type: 1}, function (data) {
-    let notices = data.map(item => {
-      return `
-        <li class="news-item" data-id="${item.id}">
-            <a href="news-detail.html?id=${item.id}" style="color: #fff;">
-              <span class="item-desc">${item.title}</span>
-              <span class="item-link">
-                <span class="link-info mobile-hide">详细</span><i class="icon font_family icon-gengduo"></i></span>
-            </a>
-          </li>
-        `;
-      }).join('');
-    $('.news-list').empty().append(notices);
-  });
+  // loadNewsByType({pageNo: 1, pageSize: 2, type: 1}, function (data) {
+  //   let notices = data.map(item => {
+  //     return `
+  //       <li class="news-item" data-id="${item.id}">
+  //           <a href="news-detail.html?id=${item.id}" style="color: #fff;">
+  //             <span class="item-desc">${item.title}</span>
+  //             <span class="item-link">
+  //               <span class="link-info mobile-hide">详细</span><i class="icon font_family icon-gengduo"></i></span>
+  //           </a>
+  //         </li>
+  //       `;
+  //     }).join('');
+  //   $('.news-list').empty().append(notices);
+  // });
   // 推送新闻
   loadNewsByType({pageNo: 1, pageSize: 1, type: 1, isPush: true}, function (data) {
     let tops = data.map(item => {
@@ -332,7 +332,7 @@ $(function () {
       $('html, body').animate({scrollTop: offsetTop - 350}, 1000);
     }
   }
-  scrollToTrget();
+  // scrollToTrget();
   changeScreen();
   mobileSlider();
   operateNav();
