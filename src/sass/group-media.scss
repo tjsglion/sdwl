@@ -205,6 +205,22 @@
           border-left-width: px2rem(1);
         }
       }
+
+      .zlbm-title,
+      .qsdw-title{
+        font-size: px2rem(28);
+        line-height: px2rem(42);
+        width: 100%;
+        color: #fff;
+        text-indent: px2rem(20);
+      }
+      .zlbm-title{
+        top: px2rem(-20);
+      }
+      .qsdw-title{
+        margin-top: px2rem(40);
+      }
+
       .second-level{
         width: 100%;
         margin-top: px2rem(40);

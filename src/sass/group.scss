@@ -170,6 +170,23 @@
       border-left: 1px solid $nav-bg-color;
     }
   }
+
+  .zlbm-title,
+  .qsdw-title{
+    position: relative;
+    background-color: $nav-bg-color;
+    font-size: 18px;
+    line-height: 32px;
+    width: 100%;
+    color: #fff;
+    text-indent: 20px;
+  }
+  .zlbm-title{
+    top: -35px;
+  }
+  .qsdw-title{
+    margin-top: 50px;
+  }
   .second-level{
     display: flex;
     position: relative;
